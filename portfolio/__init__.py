@@ -3,19 +3,20 @@ from flask import Flask, render_template, abort
 app = Flask(__name__)
 projects = [
     {
-        "name": "Habit tracking app with Python and MongoDB",
+        "name": "Blog with Python and Flask",
         "thumb": "img/habit-tracking.png",
         "hero": "img/habit-tracking-hero.png",
         "categories": ["python", "web"],
-        "slug": "habit-tracking",
-        "prod": "https://python-microblog-sxxb.onrender.com/",
+        "slug": "micro-blog",
+        "prod": "https://habit-tracker-dbb6.onrender.com/",
     },
     {
-        "name": "Personal finance tracking app with React",
+        "name": "Atomic Habits",
         "thumb": "img/personal-finance.png",
         "hero": "img/personal-finance.png",
         "categories": ["react", "javascript"],
-        "slug": "personal-finance",
+        "slug": "atomic-habits",
+        "prod": "https://habit-tracker-dbb6.onrender.com/",
     },
     {
         "name": "REST API Documentation with Postman and Swagger",
