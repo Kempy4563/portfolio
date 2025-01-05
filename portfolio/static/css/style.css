@@ -58,12 +58,13 @@ body {
 
 .main--about {
   flex-direction: column;
-  max-width: 500px;
+  max-width: 600px;
   padding: 0 1rem;
-  line-height: 150%;
+  font-size: 1.2rem; /* increase font size */
+  line-height: 1.8; /* increase line height to add spacing between lines */
   text-align: left;
   position: relative;
-  top: -15rem;
+  top: -10rem;
 }
 
 .contact {
