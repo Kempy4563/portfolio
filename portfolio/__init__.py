@@ -8,7 +8,7 @@ projects = [
         "hero": "img/habit-tracking-hero.png",
         "categories": ["python", "web"],
         "slug": "micro-blog",
-        "prod": "https://habit-tracker-dbb6.onrender.com/",
+        "prod": "https://python-microblog-sxxb.onrender.com/",
     },
     {
         "name": "Atomic Habits",
