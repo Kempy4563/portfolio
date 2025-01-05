@@ -1,3 +1,5 @@
+/* Global Styles */
+
 *,
 *::before,
 *::after {
@@ -9,13 +11,19 @@ html {
 }
 
 body {
-    padding-bottom: 50px; /* adjust this value to match the height of the footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: auto; /* add this line */
+
 }
+
+/* Header Styles */
 
 .header {
   text-align: center;
-    z-index: 1; /* add this line */
-
+  z-index: 1;
 }
 
 .nav {
@@ -29,7 +37,6 @@ body {
   color: #000;
   text-align: center;
   padding: 0.5rem 1rem;
-
 }
 
 .nav__linkheader--active {
@@ -49,23 +56,29 @@ body {
   margin-right: 2.5rem;
 }
 
+/* Main Styles */
 
 .main {
+  flex: 1;
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  padding-bottom: 100px; /* add this line */
+
 }
 
 .main--about {
   flex-direction: column;
   max-width: 600px;
   padding: 0 1rem;
-  font-size: 1.2rem; /* increase font size */
-  line-height: 1.8; /* increase line height to add spacing between lines */
+  font-size: 1.2rem;
+  line-height: 1.8;
   text-align: left;
   position: relative;
   top: -10rem;
 }
+
+/* Contact Styles */
 
 .contact {
   display: flex;
@@ -76,30 +89,20 @@ body {
 }
 
 .contact__details {
-  /* 1ch is equivalent to the width of the 0 character at the current
-       font size. This allows to create a roughly one letter gap bewteen
-       the contact label and the associated contact detail */
-
   margin-left: 1ch;
 }
 
 .contact__link {
   color: #000;
   text-decoration: none;
-
-  /* We can modify the text decoration colour and thickness to
-       create a custom underline, but the text-decoration-thickness
-       property isn't currently supported on Chrome.
-
-       Using box-shadow to simulate the underline gives us a
-       cross-browser solution. */
-
   box-shadow: 0 3px 0 0 #4cafda;
 }
 
 .contact__link:hover {
   color: #4cafda;
 }
+
+/* Projects Styles */
 
 .projects {
   display: grid;
@@ -110,8 +113,6 @@ body {
   max-width: 21.875rem;
   margin: 0 auto;
 }
-
-
 
 @media (min-width: 48.75em) {
   .projects {
@@ -132,10 +133,13 @@ body {
 }
 
 .project-card__image {
-  max-width: 100%;
-  margin-bottom: 1rem;
+  width: 100%; /* add this line */
+  height: 200px; /* add this line */
+  object-fit: cover; /* add this line */
   transition: transform 0.2s ease-in-out;
   border-radius: 5px;
+  object-position: center;
+  aspect-ratio: 16/9; /* add this line */
 
 }
 
@@ -159,6 +163,8 @@ body {
   text-decoration: underline;
 }
 
+/* Categories Styles */
+
 .categories {
   display: flex;
   padding: 0;
@@ -170,23 +176,22 @@ body {
   font-size: 1.1rem;
   letter-spacing: 0.075rem;
   justify-content: center;
-
 }
-
-/* Adds an ::after pseudo-element to each category tag, except the last one.
-   This psuedo-element contains a pipe character (|), which acts as a seperator
-   between the tags. */
 
 .categories__tag:not(:last-of-type)::after {
   content: "|";
   margin: 0 0.25rem;
 }
 
+/* Hero Styles */
+
 .hero {
   width: 100%;
   height: 40%;
   margin-bottom: 1.5rem;
 }
+
+/* Project Styles */
 
 .project {
   display: flex;
@@ -211,14 +216,15 @@ body {
     margin-right: 3rem;
     padding: 0;
     text-align: left;
-
   }
 }
 
 .project__heading {
   margin: 0;
   font-size: 2rem;
-  line-height: 150%;
+  line-height: 2.25rem;
+  color: #1c2023;
+  text-align: center;
 }
 
 .project__heading--meta {
@@ -255,13 +261,14 @@ body {
   transform: translateY(1px);
 }
 
+/* Technology List Styles */
+
 .technology-list {
   list-style: none;
   padding-left: 0.75rem;
   margin: 0;
   line-height: 1.75;
-  text-align: left; /* Add this line */
-
+  text-align: left;
 }
 
 .technology-list__item:before {
@@ -273,81 +280,59 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 0.5rem;
-
-  /* necessary for vertical centering */
   transform: translateY(2px);
 }
 
-/* Utility class to remove link styles */
+/* Utility Classes */
+
 .u-bare-link {
   text-decoration: none;
 }
 
-.block-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.container {
-    min-height: 100%;
-    position: relative;
-}
-
+/* Footer Styles */
 
 footer {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    bottom: 0;
-    width: 90%;
-
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 footer .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px 200px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 200px;
 }
-
 
 footer .row div {
-    margin-right: 20px;
-
+  margin-right: 20px;
 }
+
 footer ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-    list-style: none;
-
+  list-style: none;
 }
 
 footer a {
   display: inline-block;
   color: #fff;
-    text-decoration: none;
-
-
+  text-decoration: none;
 }
 
 footer li {
   margin-right: 20px;
 }
 
-body {
+.wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative; /* add this line */
 }
 
 .main {
@@ -357,7 +342,8 @@ body {
   margin: 0 auto;
 }
 
-footer {
+.footer {
+  margin-top: auto;
   background-color: #000;
   color: #fff;
   padding: 20px;
