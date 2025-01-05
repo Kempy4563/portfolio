@@ -4,26 +4,26 @@ app = Flask(__name__)
 projects = [
     {
         "name": "MiniBlog",
-        "thumb": "img/habit-tracking.png",
-        "hero": "img/habit-tracking-hero.png",
+        "thumb": "img/miniblog.png",
+        "hero": "img/miniblog.png",
         "categories": ["python", "web"],
         "slug": "micro-blog",
         "prod": "https://python-microblog-sxxb.onrender.com/",
     },
     {
         "name": "Atomic Habits",
-        "thumb": "img/personal-finance.png",
-        "hero": "img/personal-finance.png",
-        "categories": ["react", "javascript"],
+        "thumb": "img/atomic_habits.png",
+        "hero": "img/atomic_habits.png",
+        "categories": ["python", "web"],
         "slug": "atomic-habits",
         "prod": "https://habit-tracker-dbb6.onrender.com/",
     },
     {
-        "name": "REST API Documentation with Postman and Swagger",
-        "thumb": "img/rest-api-docs.png",
-        "hero": "img/rest-api-docs.png",
-        "categories": ["writing"],
-        "slug": "api-docs",
+        "name": "Air Fryer Recipe App",
+        "thumb": "img/airfryer.png",
+        "hero": "img/airfryer.png",
+        "categories": ["python", "django"],
+        "slug": "Air-Fryer-Recipe-App",
     },
 ]
 
