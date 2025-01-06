@@ -68,16 +68,17 @@ body {
 }
 
 .main--about {
-  flex-direction: column;
   max-width: 600px;
   padding: 0 1rem;
   font-size: 1.2rem;
-  line-height: 1.8;
+  line-height: 1.5;
   text-align: left;
   position: relative;
-    top: -10rem;
   max-height: 100vh; /* add this line */
   overflow-y: auto; /* add this line */
+  margin-top: 50px; /* reduce the margin to 50px */
+
+
 }
 
 /* Contact Styles */
@@ -310,6 +311,17 @@ footer .container {
 
 footer .row div {
   margin-right: 20px;
+
+}
+
+footer .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around; /* center the items */
+
 }
 
 footer ul {
@@ -341,7 +353,8 @@ footer li {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding-top: 20px; /* adjust this value to match the height of the header */
+  padding-top: calc(0vh - 0px); /* adjust this value to match the height of the header */
+  position: relative;
 
 }
 
