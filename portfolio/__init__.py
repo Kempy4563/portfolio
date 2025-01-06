@@ -3,7 +3,7 @@ from flask import Flask, render_template, abort
 app = Flask(__name__)
 projects = [
     {
-        "name": "MiniBlog",
+        "name": "Mini Blog",
         "thumb": "img/miniblog.png",
         "hero": "img/miniblog.png",
         "categories": ["python", "web"],
