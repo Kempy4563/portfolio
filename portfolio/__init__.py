@@ -3,12 +3,12 @@ from flask import Flask, render_template, abort
 app = Flask(__name__)
 projects = [
     {
-        "name": "Mini Blog",
-        "thumb": "img/miniblog.png",
-        "hero": "img/miniblog.png",
-        "categories": ["python", "web"],
-        "slug": "micro-blog",
-        "prod": "https://python-microblog-sxxb.onrender.com/",
+        "name": "Air Fryer Recipe App",
+        "thumb": "img/airfryer.png",
+        "hero": "img/airfryer.png",
+        "categories": ["python", "django"],
+        "slug": "Air-Fryer-Recipe-App",
+        "prod": "https://airfryer-recipes.onrender.com/",
     },
     {
         "name": "Atomic Habits",
@@ -19,11 +19,12 @@ projects = [
         "prod": "https://habit-tracker-dbb6.onrender.com/",
     },
     {
-        "name": "Air Fryer Recipe App",
-        "thumb": "img/airfryer.png",
-        "hero": "img/airfryer.png",
-        "categories": ["python", "django"],
-        "slug": "Air-Fryer-Recipe-App",
+        "name": "Mini Blog",
+        "thumb": "img/miniblog.png",
+        "hero": "img/miniblog.png",
+        "categories": ["python", "web"],
+        "slug": "micro-blog",
+        "prod": "https://python-microblog-sxxb.onrender.com/",
     },
 ]
 
