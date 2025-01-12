@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="main main--project">
+        <div>
+            <img
+                class="hero"
+                src="{{ url_for('static', filename=project['hero']) }}"
+                alt="A hand holding a pen, about to write something in a project planner."
+            />
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project['name'] }}</h2>
+
+                    <p>
+                        This app leverages the OpenWeather API to fetch real-time weather data. It allows users to input
+                        any location and receive up-to-date temperature information.
+                        Using Plotly, you can visualize the data in an interactive graph, showcasing temperature
+                        trends over time. The combination of OpenWeather API's reliable data and Plotly's dynamic graphing
+                        make this a powerful tool to keep informed about weather conditions.
+                    </p>
+
+
+                </article>
+
+                <section>
+                    <article class="project__meta-group">
+                        <h3 class="project__heading project__heading--meta">Technologies used</h3>
+
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">Open Weather API</li>
+                            <li class="technology-list__item">Plotly</li>
+                        </ul>
+                    </article>
+
+                    <a class="cta" target="_blank" href="{{ project['prod'] }}">
+                        <img class="cta__icon" src="{{ url_for('static', filename='img/pointer.svg') }}">
+                        View in production
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+{% endblock %}

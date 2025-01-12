@@ -26,6 +26,14 @@ projects = [
         "slug": "micro-blog",
         "prod": "https://python-microblog-sxxb.onrender.com/",
     },
+    {
+        "name": "Weather App",
+        "thumb": "img/open_weather.png",
+        "hero": "img/weather_hero.png",
+        "categories": ["python", "API", "web"],
+        "slug": "open-weather",
+        "prod": "https://kempy-weather.streamlit.app/",
+    },
 ]
 
 slug_to_project = {project["slug"]: project for project in projects}
