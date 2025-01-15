@@ -16,12 +16,13 @@
     <header class="header">
         <h1>Lee Ryan Kempson</h1>
         <nav class="nav">
-            <a href="{{ url_for('home') }}" class="nav__linkheader {{ 'nav__linkheader--active' if request.path == url_for('home') }}">
-                Projects
-            </a>
+
             <a href="{{ url_for('about') }}" class="nav__linkheader {{ 'nav__linkheader--active' if request.path == url_for('about') }}">
                     About
                 </a>
+            <a href="{{ url_for('home') }}" class="nav__linkheader {{ 'nav__linkheader--active' if request.path == url_for('home') }}">
+                Projects
+            </a>
             <a href="{{ url_for('contact') }}" class="nav__linkheader {{ 'nav__linkheader--active' if request.path == url_for('contact') }}">
                     Contact
                 </a>
