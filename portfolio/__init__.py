@@ -106,5 +106,7 @@ def handle_contact_form():
 
         send_email("leekempson@hotmail.com", subject, message_body)
 
-        flash('Thank you for your inquiry! I will get back to you soon.', 'success')
+        flash('Thank you for your inquiry!', 'success')
+        flash('I will get back to you asap.', 'success')
+
     return render_template('contact.html')

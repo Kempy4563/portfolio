@@ -294,14 +294,18 @@ body {
 
 footer {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 0;
   width: 100%;
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
+  padding-top: 5px;
   border-top: 1px solid #444;
-  height: 150px; /* adjust this value to your liking */
+  height: 80px; /* adjust this value to your liking */
 }
 
 body {
@@ -450,4 +454,9 @@ a:hover {
     text-decoration-color: #4cafda;
     text-decoration-style: solid;
     text-decoration-thickness: 3px;
+}
+
+.hero {
+    width: 800px;
+    height: auto;
 }
