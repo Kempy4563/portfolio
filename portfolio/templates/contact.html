@@ -3,30 +3,49 @@
 {% block content %}
 
 <main class="main main--content">
-    <dl>
-        <div class="contact">
-            <dt><i class="fas fa-envelope"></i> </dt>
-            <dd class="contact__details">
-                <a class="contact__link" target="_blank" href="mailto:leekempson@hotmail">leekempson@hotmail.com</a>
-            </dd>
-        </div>
-        <div class="contact">
-            <dt>
-                <a class="contact__link" href="https://github.com/Kempy4563?tab=repositories" target="_blank">
-                    <i class="fab fa-github"></i> Github:
-                </a>
-            </dt>
-            <dd class="contact__details"></dd>
-        </div>
-        <div class="contact">
-            <dt>
-                <a class="contact__link" href="https://www.linkedin.com/in/lee-kempson-8b865b294/" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn:
-                </a>
-            </dt>
-            <dd class="contact__details"></dd>
-        </div>
-    </dl>
+    <div class="main-wrapper">
+<span style="font-size: 18px;">
+    <a href="mailto:leekempson@hotmail.com" style="color: #000; text-decoration: none;" onmouseover="this.style.textDecoration='underline'; this.style.textDecorationColor='#4cafda'; this.style.textDecorationStyle='solid'; this.style.textDecorationThickness='3px';" onmouseout="this.style.textDecoration='none';">
+        <i class="fas fa-envelope"></i> Send Mail
+    </a>
+    &nbsp;|&nbsp;
+    <a href="https://github.com/Kempy4563?tab=repositories" target="_blank" style="color: #000; text-decoration: none;" onmouseover="this.style.textDecoration='underline'; this.style.textDecorationColor='#4cafda'; this.style.textDecorationStyle='solid'; this.style.textDecorationThickness='3px';" onmouseout="this.style.textDecoration='none';">
+        <i class="fab fa-github"></i> Github
+    </a>
+    &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/lee-kempson-8b865b294/" target="_blank" style="color: #000; text-decoration: none;" onmouseover="this.style.textDecoration='underline'; this.style.textDecorationColor='#4cafda'; this.style.textDecorationStyle='solid'; this.style.textDecorationThickness='3px';" onmouseout="this.style.textDecoration='none';">
+        <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+</span>
+    </div>
+    <div class="contact-form">
+        <br>
+    <h3 style="text-align: center;">Get in touch</h3>
+
+
+        <form action="/contact" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flash-messages">
+          {% for message in messages %}
+            <li class="flash-message">{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
 </main>
 
 {% endblock %}
+

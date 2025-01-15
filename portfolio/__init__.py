@@ -1,6 +1,14 @@
-from flask import Flask, render_template, abort
+from flask import request
+from flask import Flask, render_template, abort, flash
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+
 
 app = Flask(__name__)
+app.secret_key = '2455fdfdf'
+
 projects = [
     {
         "name": "Air Fryer Recipe App",
@@ -67,8 +75,36 @@ def project(slug):
     return render_template(f"project_{slug}.html", project=slug_to_project[slug])
 
 
+def send_email(to, subject, message):
+    from_email = "leekempson73@gmail.com"  # replace with your email
+    password = "tkcq kmhz mfnj mdno"  # replace with your password
 
+    msg = MIMEMultipart()
+    msg['From'] = from_email
+    msg['To'] = to
+    msg['Subject'] = subject
 
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template("404.html"), 404
+    body = message
+    msg.attach(MIMEText(body, 'plain'))
+
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(from_email, password)
+    text = msg.as_string()
+    server.sendmail(from_email, to, text)
+    server.quit()
+
+@app.route('/contact', methods=['GET', 'POST'])
+def handle_contact_form():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
+
+        subject = "Contact Form Submission"
+        message_body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
+
+        send_email("leekempson@hotmail.com", subject, message_body)
+
+        flash('Thank you for your inquiry! I will get back to you soon.', 'success')
+    return render_template('contact.html')
