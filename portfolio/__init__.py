@@ -81,9 +81,8 @@ def project(slug):
 
 def send_email(to, subject, message):
     from_email = "leekempson73@gmail.com"  # replace with your email
-    password = "tkcq kmhz mfnj mdno"  # replace with your password
-    #password = os.environ.get('password', default='your secret key')
-
+    #password = "tkcq kmhz mfnj mdno"  # replace with your password
+    password = os.environ.get('RENDER_EMAIL_PASSWORD')
 
     msg = MIMEMultipart()
     msg['From'] = from_email
