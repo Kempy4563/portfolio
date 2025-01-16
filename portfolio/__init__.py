@@ -9,8 +9,7 @@ load_dotenv()  # Load environment variables from .env file
 
 
 app = Flask(__name__)
-app.secret_key = '2455fdfdf'
-#app.secret_key = os.environ.get('app.secret_key', default='your secret key')
+app.secret_key = os.environ.get('RENDER_SECRET_KEY', default='your secret key')
 
 
 projects = [
@@ -81,7 +80,6 @@ def project(slug):
 
 def send_email(to, subject, message):
     from_email = "leekempson73@gmail.com"  # replace with your email
-    #password = "tkcq kmhz mfnj mdno"  # replace with your password
     password = os.environ.get('RENDER_EMAIL_PASSWORD')
 
     msg = MIMEMultipart()
